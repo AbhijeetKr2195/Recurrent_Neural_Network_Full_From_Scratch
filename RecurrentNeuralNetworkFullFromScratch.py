@@ -67,9 +67,7 @@ class RecurrentNeuralNetwork:
     # BACKWARD PASS THROUGH THE NETWORK
     def backward_pass(self, input_states, hidden_states, predicted_output, targets):
         # INITIALIZE GRADIENT MATRICES AND VECTORS
-        dU, dW, dV = [[0] * self.vocab_size for _ in range(self.hidden_size)],
-                        [[0] * self.hidden_size for _ in range(self.hidden_size)],
-                        [[0] * self.hidden_size for _ in range(self.vocab_size)]
+        dU, dW, dV = [[0] * self.vocab_size for _ in range(self.hidden_size)], [[0] * self.hidden_size for _ in range(self.hidden_size)], [[0] * self.hidden_size for _ in range(self.vocab_size)]
 
         dbias, d_output_bias = [[0] for _ in range(self.hidden_size)], [[0] for _ in range(self.vocab_size)]
         hidden_state_update = [0] * self.hidden_size
